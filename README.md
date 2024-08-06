@@ -1,1 +1,1 @@
-# HUI_QUZI.github.io
+# HUI_QUIZ.github.io
