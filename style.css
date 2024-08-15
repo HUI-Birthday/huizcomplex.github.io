@@ -1,16 +1,127 @@
+/* 기본 스타일 초기화 */
 body {
-    margin : 0;
-    width: 100vw;
-    height: 100vw;
-    background-image: url("./images/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* 배경색 설정 */
+    color: #333;
 }
 
-@media (min-width: 768px) {
-    .container {
-        width: 50%;
-        height: 100vw;
-    }
+/* 전체 시험지 스타일 */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    /* background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
+/* 시험지 제목 */
+.exam-title img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 문제 스타일 */
+.question {
+    postion: relative;
+    margin-bottom: 30px;
+}
+
+.question-header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.question-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 선택지 스타일 */
+.answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.answer {
+    position: relative;
+    flex: 1 1 calc(50% - 10px); /* 2열 레이아웃 설정 */
+    max-width: calc(50% - 10px); /* 최대 너비 설정 */
+}
+
+.answer img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.answer img:hover {
+    border-color: #007bff; /* 호버 시 테두리 색상 변경 */
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.checkmark::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.answer.checked .checkmark {
+    opacity: 1;
+}
+
+.answer.checked .checkmark::after {
+    opacity: 1;
+}
+
+/* 제출 버튼 스타일 */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
